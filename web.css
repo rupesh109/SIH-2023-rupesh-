@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(#03fcf4);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+
+.map {
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 30px;
+    padding-top: 50px;
+    position: relative;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  
+  /* Create four equal columns that sits next to each other */
+  .column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  }
+  
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 800px) {
+    .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
+  .photo-gallery{
+    gallery {
+        --n: 3; /* number of rows*/
+        --m: 4; /* number of columns */
+        --h: 120px; /* control the height */
+        --w: 150px; /* control the width */
+        --g: 10px;  /* control the gap */
+        --f: 1.5;   /* control the scale factor */
+        
+        display: grid;
+        gap: var(--g);
+        width:  calc(var(--m)*var(--w) + (var(--m) - 1)*var(--g));
+        height: calc(var(--n)*var(--h) + (var(--n) - 1)*var(--g));
+        grid-template-columns: repeat(var(--m),auto);
+      }
+      
+      .photo-gallery > column {
+        width: 0;
+        height: 0;
+        min-height: 100%;
+        min-width: 100%;
+        object-fit: cover;
+        cursor: pointer;
+        filter: grayscale(80%);
+        transition: .35s linear;
+      }
+      .photo-gallery column:hover{
+        filter: grayscale(0);
+        width:  calc(var(--w)*var(--f));
+        height: calc(var(--h)*var(--f));
+      }
+      
+      
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-content: center;
+        background: #60c4ff;
+      }
+  }
+
+.Heading {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+.header
+
+nav :before {
+    content: '';
+    position: absolute;
+    border-bottom: 2px solid indianred;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 0%;
+    transition: 0.4s;
+}
+
+nav ul {
+    display: inline-block;
+    list-style: none;
+    position: relative;
+}
+
+nav ul ::before {
+    content: '';
+    position: absolute;
+    border-bottom: 2px solid indianred;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 0%;
+    transition: 0.4s;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 70px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    font-family: sans-serif;
+    position: relative;
+}
+
+nav ul li button {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    outline: none;
+    border: 1px goldenrod;
+    transition: 0.4s;
+    background: indianred;
+    cursor: pointer;
+    font-family: sans-serif;
+    position: relative;
+
+}
+
+.h-txt {
+    max-width: 650px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+.h-txt h1 {
+    font-size: 3.5em;
+
+}
+
+.h-txt a {
+    text-decoration: none;
+    background: greenyellow;
+    letter-spacing: 5px;
+    color: black;
+    padding: 10px 20px;
+}
+
+.h-txt a:hover {
+    background: transparent;
+    border: 1px rgb(19, 139, 65);
+    transition: 0.4s;
+}
+
+nav ul li button:hover {
+    color: aqua;
+}
+
+nav ul li a:hover {
+    color: aqua;
+}
+
+.logo {
+    text-decoration: none;
+    color: rgb(0, 172, 55);
+    font-size: 2em;
+    letter-spacing: 2px;
+}
+
+#login-form {
+    display: none;
+}
+
+.form-box {
+    width: 380px;
+    height: 480px;
+    position: relative;
+    margin: 2% auto;
+    background: rgb(28, 17, 143);
+    padding: 10px;
+    overflow: hidden;
+}
+
+.button-box {
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #ca420d1f;
+    border-radius: 30px;
+}
+
+.toggle-btn {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: #F3C693;
+    border-radius: 30px;
+    transition: .5s;
+}
+
+.input-group-login {
+    top: 150px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+
+.input-group-register {
+    top: 120px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+    color: #bb0e0e;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #bb0e0e;
+    outline: none;
+    background: transparent;
+}
+
+.submit-btn {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: #F3C693;
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+
+.check-box {
+    margin: 30px 10px 34px 0;
+}
+
+span {
+    color: #777;
+    font-size: 12px;
+    bottom: 68px;
+    position: absolute;
+}
+
+#login {
+    left: 50px;
+}
+
+#login input {
+    color: white;
+    font-size: 15;
+}
+
+#register {
+    left: 450px;
+}
+
+#register input {
+    color: white;
+    font-size: 15;
+}
